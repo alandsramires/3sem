@@ -31,6 +31,8 @@ GTEL1='^\([0-9]{2}\) 9[0-9]{4}-[0-9]{4}'
 GTEL2='^\([0-9]{2}\)9[0-9]{4}-[0-9]{4}'
 GTEL3='^9[0-9]{4}-[0-9]{4}'
 
+GCPF='^([0-9]{3})(.)([0-9]{3})(.)([0-9]{3})(-)([0-9]{2})'
+
 echo "Digite seu nome:"
 read NOME
 
@@ -63,7 +65,17 @@ read TEL
 			 if [[ $TEL =~ $GTEL3 ]];then	
 			  echo "Numero de Telefone Válido!"
 				else
-				 echo "Numer de Telefone Inválido!"
+				 echo "Numero de Telefone Inválido!"
 			 fi	
 		 fi
+	fi
+
+sleep 2
+echo "Digite seu CPF"
+read CPF
+
+	if [[ $CPF =~ $GCPF ]]; then
+	 echo "Numero de CPF Válido!"
+		else
+		echo "Numero de CPF Inválido!"
 	fi
